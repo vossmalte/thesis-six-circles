@@ -1,0 +1,107 @@
+% !TeX encoding = UTF-8
+
+% Warning: Do not edit the template file.  For feedback or similar contact
+% Christian Dreher: c.dreher@kit.edu
+\documentclass[english,ngerman]{template/h2treprt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% CONFIGURATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\renewcommand{\mythesis}{\mastersthesis}
+\renewcommand{\mytitle}{Variationen des 6-Kreise-Satzes}
+\renewcommand{\myshorttitle}{} % Subtitle is optional.
+\renewcommand{\myname}{Malte Vo\ss}
+\renewcommand{\timeend}{\iflanguage{english}{July 15th,}{15. Juli} 2022}
+%\renewcommand{\advisorsingular}{\iflanguage{english}{Advisor}{Betreuende Mitarbeiterin}}{}
+\newcommand{\referee}{Prof. Dr. Roman Sauer}
+%\newcommand{\refereethree}{Third Referee}
+% \newcommand{\advisor}{Your Advisor, M.Sc.}
+%\newcommand{\advisortwo}{Second Advisor}
+%\newcommand{\advisorthree}{Third Advisor}
+
+% Meta data in the PDF file.
+\hypersetup{
+	pdfauthor={\myname},
+	pdftitle={\mytitle},
+	pdfsubject={\mytitle},
+	pdfkeywords={Thesis, Template, LaTeX, Geometry, Circles}  % Some relevant keywords of your choice.
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% DOCUMENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+% Set the content language.  Default language is "english".  If you want to
+% write your thesis in German, use "ngerman" instead.
+\selectlanguage{ngerman}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% FRONT MATTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frontmatter
+
+\maketitle
+\cleardoublepage
+
+\makedeclaration
+\cleardoublepage
+
+\input{front/abstract_de.tex}
+\cleardoublepage
+
+\iflanguage{english}{%
+    \input{front/abstract_en.tex}%
+    \cleardoublepage%
+}{}
+
+\tableofcontents
+\cleardoublepage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%   MAIN MATTER   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mainmatter
+
+\input{main/introduction.tex}
+\cleardoublepage
+
+\input{main/fundamentals.tex}
+\cleardoublepage
+
+\input{main/related_work.tex}
+\cleardoublepage
+
+% This is one example content chapter.  Add more if needed.
+\input{main/example_content_chapter.tex}
+\cleardoublepage
+
+\input{main/evaluation.tex}
+\cleardoublepage
+
+\input{main/conclusion_future_work.tex}
+\cleardoublepage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%   BACK MATTER   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\backmatter
+
+\iflanguage{english}{%
+    \bibliographystyle{abbrvnat}%
+}{%
+    \bibliographystyle{dinat}%
+}
+\bibliography{bibliography}
+\cleardoublepage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%   APPENDIX   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\appendix
+
+\input{appendix/example_appendix.tex}
+%\cleardoublepage
+
+\end{document}
