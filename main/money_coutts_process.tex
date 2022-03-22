@@ -6,16 +6,16 @@ Diese Seiten berühren sich in der Ecke $A_1$ des Polygons $P$.
 Weiterhin sei festgelegt, ob die folgenden Kreise gegen oder mit dem Uhrzeigersinn in der jeweils nächste Ecke des Polygons positioniert werden.
 Der neue Kreis $C_2$ soll so positioniert werden, dass er den Kreis $C_1$ berührt.
 
-Das Zentrum eines solchen Kreises liegt dabei immer auf der Winkelhalbierenden des Winkels der Ecke, in die der Kreis positioniert wird.
-Kennt man den Radius des zu positionierenden Kreises, so ist die Position des Zentrums eindeutig.
-Intuitiv schiebt man das Zentrum des Kreises entlang der Winkelhalbierenden so nah an die Ecke des des Polygons,
+Der Mittelpunkt eines solchen Kreises liegt dabei immer auf der Winkelhalbierenden des Winkels der Ecke, in die der Kreis positioniert wird.
+Kennt man den Radius des zu positionierenden Kreises, so ist die Position des Mittelpunktes eindeutig.
+Intuitiv schiebt man den Mittelpunkt des Kreises entlang der Winkelhalbierenden so nah an die Ecke des des Polygons,
 dass der Kreis die beiden anliegenden Seiten der Ecke berührt.
 
 \citet{Taba2013} merken dazu an,
 % TODO: Anmerkungen zum MCP: kleinerer Kreis wählen, preconditions
 
 In dieser Arbeit werden folgende Konventionen zur Notation verwendet,:
-Im gegebenen Polygon $P$ mit Ecken $A_1$ bis $A_n$ sind sei die Seite $a_i$ zwischen den Ecken $A_i$ und $A_{i+1}$.
+Im gegebenen Polygon $P$ mit Ecken $A_1$ bis $A_n$ sind sei $a_i$ die Länge der Seite zwischen den Ecken $A_i$ und $A_{i+1}$.
 Die Größe des Winkels in der Ecke bei $A_i$ beträgt $2\alpha_i$.
 Das Winkelmaß $\alpha_i$ ist also gerade die Hälfte des Winkels bei $A_i$.
 
@@ -24,11 +24,34 @@ Das Winkelmaß $\alpha_i$ ist also gerade die Hälfte des Winkels bei $A_i$.
     \caption{Darstellung der Notationen}
 \end{figure}
 
-Um die
+\paragraph{Konstruktion im Money-Coutts-Prozess}
+
+Zwei Kreise, die nacheinander erzeugt werden, berühren beide die Kante $a_i$.
+Konstruiert man ein rechtwinkliges Dreieck wie in \Cref{fig:mcp:two-circles},
+ergibt sich mit dem Satz des Pythagoras folgender Zusammenhang:
+\begin{equation}
+    a_i = r_i\cot\alpha_i + 2\sqrt{r_i r_{i+1}} +r_{i+1}\cot\alpha_{i+1}
+    \label{mcp:two-circles}
+\end{equation}
+
+\citet{Taba2000} führt nun neue Variablen ein, die \citet{Troub2000} \emph{Tabachnikov-Koordinaten} nennt:
+
+\begin{equation}
+    \begin{array}{ccc}
+        c_i = \sqrt{a_i}, & u_i = \sqrt{r_i \cot\alpha_i}, & e_i = \sqrt{\tan\alpha_i \tan\alpha_{i+1}}
+    \end{array}
+    \label{mcp:taba-coordinates}
+\end{equation}
+
+Durch Verwendung dieser Koordinaten erhält man aus \Cref{mcp:two-circles}:
+\begin{equation}
+    c_i^2 = u_i^2 + 2 e_i u_i u_{i+1} + u_{i+1}^2
+\end{equation}
 
 \begin{figure}[htbp]
     \include{figures/nextcircle.tex}
     \caption{Zwei aufeinander folgende Kreise im Money-Coutts-Prozess.}
+    \label{fig:mcp:two-circles}
 \end{figure}
 
 
