@@ -46,6 +46,23 @@ ergibt sich mit dem Satz des Pythagoras folgender Zusammenhang:
 Durch Verwendung dieser Koordinaten erhält man aus \Cref{mcp:two-circles}:
 \begin{equation}
     c_i^2 = u_i^2 + 2 e_i u_i u_{i+1} + u_{i+1}^2
+    % TODO: ist diese Umformung wichtig?
+    = u_i (u_i + e_i u_{i+1}) +u_{i+1} (u_{i+1} + e_i u_i)
+\end{equation}
+
+% siehe https://www.wolframalpha.com/input?i=+u%5E2+%2B+2+e+u+v+%2B+v%5E2+%3D+c%5E2
+Diese in $u_{i+1}$ quadratische Gleichung wird weiterhin nach $u_{i+1}$ aufgelöst:
+\begin{equation*}
+    u_{i+1} = - e_i u_i \pm \sqrt{c_i^2 + (e_i^2 - 1) u_i^2}
+\end{equation*}
+% TODO: ist e_i > 1?
+% TODO: wo kommen die Beträge her?
+% TODO: welches nehmen wir von \pm ?
+% TODO: kleinere Lösung wählen für den kleineren Kreis?
+
+\begin{equation}
+    u_{i+1} = \text{\% TODO}
+    \label{mcp:iteration-equation}
 \end{equation}
 
 \begin{figure}[htbp]
