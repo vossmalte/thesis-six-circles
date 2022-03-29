@@ -1,0 +1,27 @@
+\chapter{Parallelogramme}
+
+Die Summe zweier benachbarter Winkel in einem Parallelogramm ist $\pi$,
+somit gilt $\alpha_{i+1} = \pi/2 - \alpha_i$.
+Durch Phasenverschiebung erhalten wir folgende Identität:
+\begin{equation*}
+    \tan\alpha_{i+1}  = \tan(\pi - \alpha_i)
+    = \frac{\sin(\pi - \alpha_i)}{\cos(\pi - \alpha_i)}
+    = \frac{\cos(\alpha_i)}{\sin(\alpha_i)}
+    = \cot\alpha_i
+\end{equation*}
+Daraus folgt
+\begin{equation*}
+    e_i = \sqrt{\tan\alpha_i \tan \alpha_{i+1}} = 1
+\end{equation*}
+Die Iterationsvorschrift - siehe \Cref{mcp:iteration-equation} - lautet für Parallelogramme:
+\begin{equation*}
+    u_{i+1}=|u_i - c_i|
+\end{equation*}
+
+Zur Analyse der Periodizität des Money-Coutts-Prozesses verwendet \citet{Troub2000}
+eine Funktion $f$, die ein $u_i$ durch zwei Iterationsschritte transformiert:
+\begin{equation*}
+    u_{i+2}=||u_i-c_i|-c_{i+1}| =: f(u_i)
+\end{equation*}
+Dabei ist zu beachten, dass 2-Periodizität von $f$ 4-Periodizität des Money-Coutts-Prozesses bedeutet,
+da eine Anwendung von $f$ zwei Kreise in gegenüberliegenden Ecken in Relation setzt.
