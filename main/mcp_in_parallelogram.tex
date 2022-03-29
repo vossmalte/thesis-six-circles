@@ -13,15 +13,53 @@ Daraus folgt
 \begin{equation*}
     e_i = \sqrt{\tan\alpha_i \tan \alpha_{i+1}} = 1
 \end{equation*}
-Die Iterationsvorschrift - siehe \Cref{mcp:iteration-equation} - lautet für Parallelogramme:
+Die Iterationsvorschrift - als vereinfachte Instanz von \Cref{mcp:iteration-equation} - lautet für Parallelogramme:
 \begin{equation*}
     u_{i+1}=|u_i - c_i|
 \end{equation*}
 
 Zur Analyse der Periodizität des Money-Coutts-Prozesses verwendet \citet{Troub2000}
-eine Funktion $f$, die ein $u_i$ durch zwei Iterationsschritte transformiert:
+eine Funktion $f:\mathbb{R}_0^+ \to \mathbb{R}_0^+$, die ein $u_i$ durch zwei Iterationsschritte transformiert:
 \begin{equation*}
     u_{i+2}=||u_i-c_i|-c_{i+1}| =: f(u_i)
 \end{equation*}
 Dabei ist zu beachten, dass 2-Periodizität von $f$ 4-Periodizität des Money-Coutts-Prozesses bedeutet,
 da eine Anwendung von $f$ zwei Kreise in gegenüberliegenden Ecken in Relation setzt.
+Die Funktion $f$ ist von den Parametern $c_i$ und $c_{i+1}$ - die mit den Seitenlängen des Parallelogramms korrespondieren und strikt positiv sind - abhängig.
+
+\begin{align*}
+    f(x) & = \begin{cases}
+                 |c_1-x-c_2| \text{ für } c_1 > x \\
+                 |x-c_1-c_2| \text{ für } c_1 \leq x
+             \end{cases} \\
+    % TODO: make these colorful like in the graph
+         & =\begin{cases}
+                \\ // TODO
+                \\
+                \\
+                \\
+            \end{cases}
+\end{align*}
+
+Ihre zwei Tiefpunkte sind bei $(c_i-c_{i+1}|0)$ und $(c_i+c_{i+1}|0)$;
+ein lokales Maximum ist bei $(c_i|c_{i+1})$.
+Für $\pm\infty$ strebt die Funktion gegen unendlich.
+
+\begin{figure}
+    % TODO: make a figure of this graph (in matplotlib?)
+    \caption{Der Graph der Funktion $f$, die zwei Schritte des Money-Coutts-Prozesses in einem Parallelogram beschreibt.}
+    \label{parallogram:function}
+\end{figure}
+
+Das Vorzeichen der Differenz $c_i - c_{i+1}$ bestimmt das periodische Verhalten von $f$.
+\begin{itemize}
+    \item Ist $c_i=c_{i+1}$, so ist $f(x)=x$ für $x\in[0,c_i]$.
+    \item Für $c_i>c_{i+1}$ ist $f(f(x))=x$ für $x\in[0,c_i-c_{i+1}]$.
+    \item Für $c_i<c_{i+1}$ ist $f(f(x))=x$ für $x\in[c_i,c_i+c_{i+1}]$.
+          \label{parallelogram:cases}
+\end{itemize}
+
+Für $x=u_i$, das nicht in einem solchen Intervall liegt, gilt,
+dass nach endlich vielen Anwendungen von $f$ auf $x$ das Resultat in einem solchen Intervall liegt.
+% TODO: begründe, warum in ein solches Intervall abgebildet wird.
+Somit gibt es eine endlich lange Präperiode.
