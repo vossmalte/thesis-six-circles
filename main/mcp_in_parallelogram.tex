@@ -27,7 +27,7 @@ Dabei ist zu beachten, dass 2-Periodizität von $f$ 4-Periodizität des Money-Co
 da eine Anwendung von $f$ zwei Kreise in gegenüberliegenden Ecken in Relation setzt.
 Die Funktion $f$ ist von den Parametern $c_i$ und $c_{i+1}$ - die mit den Seitenlängen des Parallelogramms korrespondieren und strikt positiv sind - abhängig.
 
-\begin{align*}
+\begin{align}
     f(x) & = \begin{cases}
                  |c_1-x-c_2| \text{ für } c_1 > x \\
                  |x-c_1-c_2| \text{ für } c_1 \leq x
@@ -39,16 +39,20 @@ Die Funktion $f$ ist von den Parametern $c_i$ und $c_{i+1}$ - die mit den Seiten
                 \\
                 \\
             \end{cases}
-\end{align*}
+    \label{parallelogram:cases}
+\end{align}
 
 Ihre zwei Tiefpunkte sind bei $(c_i-c_{i+1}|0)$ und $(c_i+c_{i+1}|0)$;
 ein lokales Maximum ist bei $(c_i|c_{i+1})$.
 Für $\pm\infty$ strebt die Funktion gegen unendlich.
+Der Graph der Funktion ist in \Cref{parallogram:function-graph} zu sehen.
 
 \begin{figure}
     % TODO: make a figure of this graph (in matplotlib?)
-    \caption{Der Graph der Funktion $f$, die zwei Schritte des Money-Coutts-Prozesses in einem Parallelogram beschreibt.}
-    \label{parallogram:function}
+    \input{figures/f_in_parallelogram.pgf}
+    \caption{Der Graph der Funktion $f$, die zwei Schritte des Money-Coutts-Prozesses in einem Parallelogram beschreibt.
+        Die Farben korrespondieren zu denen aus \Cref{parallogram:cases}}
+    \label{parallogram:function-graph}
 \end{figure}
 
 Das Vorzeichen der Differenz $c_i - c_{i+1}$ bestimmt das periodische Verhalten von $f$.
@@ -56,10 +60,16 @@ Das Vorzeichen der Differenz $c_i - c_{i+1}$ bestimmt das periodische Verhalten 
     \item Ist $c_i=c_{i+1}$, so ist $f(x)=x$ für $x\in[0,c_i]$.
     \item Für $c_i>c_{i+1}$ ist $f(f(x))=x$ für $x\in[0,c_i-c_{i+1}]$.
     \item Für $c_i<c_{i+1}$ ist $f(f(x))=x$ für $x\in[c_i,c_i+c_{i+1}]$.
-          \label{parallelogram:cases}
 \end{itemize}
 
 Für $x=u_i$, das nicht in einem solchen Intervall liegt, gilt,
 dass nach endlich vielen Anwendungen von $f$ auf $x$ das Resultat in einem solchen Intervall liegt.
 % TODO: begründe, warum in ein solches Intervall abgebildet wird.
 Somit gibt es eine endlich lange Präperiode.
+
+\paragraph{Anmerkungen}
+Der Fall $c_i=c_{i+1}$ entspricht einer Raute.
+Analog zu \Cref{regular-polygon:chapter} ist der Iterationsschritt (\ref{mcp:iteration-equation}) selbstinvers für \emph{kleine} $u_i$.
+% TODO: bessere Formulierung für Vertauschung
+Die anderen beiden Fälle sind austauschbar, denn führt man einen Iterationsschritt aus und verwendet von da an $f$,
+so sind $c_i$ und $c_{i+1}$ vertauscht.
