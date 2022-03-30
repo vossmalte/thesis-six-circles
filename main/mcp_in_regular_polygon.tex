@@ -7,15 +7,14 @@ Betrachtet man einen Kreis des Prozesses, so sind sein Vorgänger und Nachfolger
 Daraus folgt, dass der Prozess $n$-periodisch für $n$ gerade respektive $2n$ periodisch ist für $n$ ungerade \citep{Taba2000}.
 
 Wir untersuchen dies algebraisch als Vorbereitung auf nachfolgende Kapitel.
-Es gilt: $\alpha_i = \frac{(n-2) \pi}{2n} = \alpha$ für alle $i$, da jeder Innenwinkel eines regelmäßigen Polygons gleich ist.
+Es gilt: $\alpha_i = \frac{(n-2) \pi}{2n} = \alpha$ für alle $i$, da jeder Innenwinkel eines regelmäßigen Polygons gleich groß ist.
 Ebenso ist $e_i=\tan \alpha = e$ für alle $i$ gleich.
 Ohne Beschränkung der Allgemeinheit können wir annehmen, dass $c_i=1 = c$ ist,
 da wir das Polygon so skalieren können, dass alle Seiten die Länge $1$ haben.
 Damit können wir \Cref{mcp:iteration-equation} vereinfachen:
 
-% TODO: write down equation
 \begin{equation}
-    u_{i+1}=||
+    u_{i+1}=|u_i-\sqrt{1+(\tan^2\alpha-1) u_i^2}|
 \end{equation}
 
 % TODO: this equation is self-inverse (if u_i ist small enough)
