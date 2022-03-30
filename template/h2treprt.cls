@@ -30,6 +30,7 @@
 \usepackage{amsthm}
 \usepackage{enumerate}
 \usepackage{color}
+\usepackage{xcolor}
 \usepackage{subfigure}
 \usepackage{tikz}
 \usetikzlibrary{calc}
