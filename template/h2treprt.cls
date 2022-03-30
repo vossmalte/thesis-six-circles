@@ -69,6 +69,13 @@ pdfcreator={LaTeX with H2T thesis template v1.4.1}]{hyperref}  %{0.57 0.74 0.57}
 
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
 
+% Tableau colors from matplotlib
+% % https://github.com/matplotlib/matplotlib/blob/main/lib/matplotlib/_color_data.py
+\definecolor{plt_blue}{RGB}{31, 119, 180}
+\definecolor{plt_orange}{RGB}{255, 119, 14}
+\definecolor{plt_green}{RGB}{44, 160, 44}
+\definecolor{plt_red}{RGB}{214, 39, 40}
+
 \lstloadlanguages{C++,bash,TeX,Python}
 \lstset{
     language={[LaTeX]TeX},

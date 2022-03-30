@@ -31,14 +31,18 @@ Die Funktion $f$ ist von den Parametern $c_i$ und $c_{i+1}$ - die mit den Seiten
     f(x) & = \begin{cases}
                  |c_1-x-c_2| \text{ für } c_1 > x \\
                  |x-c_1-c_2| \text{ für } c_1 \leq x
-             \end{cases} \\
+             \end{cases}             \\
     % TODO: make these colorful like in the graph
          & =\begin{cases}
                 % https://www.overleaf.com/learn/latex/Using_colours_in_LaTeX
-                \color{red} // TODO \\
-                \\
-                \\
-                \\
+                \color{plt_blue}
+                (c_1-c_2)-x \text{ für } x<c_1 \wedge x<c_1-c_2 \\
+                \color{plt_orange}
+                x-(c_1-c_2) \text{ für } x<c_1 \wedge x>c_1-c_2 \\
+                \color{plt_green}
+                (c_1+c_2)-x \text{ für } x>c_1 \wedge x<c_1+c_2 \\
+                \color{plt_red}
+                x-(c_1+c_2) \text{ für } x>c_1 \wedge x>c_1+c_2 \\
             \end{cases}
     \label{parallelogram:cases}
 \end{align}
@@ -52,7 +56,7 @@ Der Graph der Funktion ist in \Cref{parallogram:function-graph} zu sehen.
     % TODO: make a figure of this graph (in matplotlib?)
     \input{figures/f_in_parallelogram.pgf}
     \caption{Der Graph der Funktion $f$, die zwei Schritte des Money-Coutts-Prozesses in einem Parallelogram beschreibt.
-        Die Farben korrespondieren zu denen aus \Cref{parallogram:cases}}
+        Die Farben korrespondieren zu denen aus \Cref{parallelogram:cases}}.
     \label{parallogram:function-graph}
 \end{figure}
 
