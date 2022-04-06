@@ -1,23 +1,34 @@
 \chapter{Der Money-Coutts-Prozess}
 
-Der Money-Coutts-Prozess beschreibt die iterative Erzeugung von Kreisen in einem Polygon.
-Gegeben sind dabei ein Polygon $P$ und ein Kreis $C_1$, der zwei Seiten des Polygons berührt.
-Diese Seiten berühren sich in der Ecke $A_1$ des Polygons $P$.
-Weiterhin sei festgelegt, ob die folgenden Kreise gegen oder mit dem Uhrzeigersinn in der jeweils nächste Ecke des Polygons positioniert werden.
-Der neue Kreis $C_2$ soll so positioniert werden, dass er den Kreis $C_1$ berührt.
+\citet{EMT1974} beschreiben einen Prozess zur iterativen Erzeugung von Kreisen in einem Dreieck.
+Zunächst wird ein Kreis eine Ecke des Dreiecks gezeichnet --
+er berührt die beiden Seiten, die diese Ecke bilden.
+Dann werden reihum weitere Kreise in die Ecken gezeichnet,
+sie zusätzlich den jeweils vorher gezeichneten Kreis berühren.
 
 Der Mittelpunkt eines solchen Kreises liegt dabei immer auf der Winkelhalbierenden des Winkels der Ecke, in die der Kreis positioniert wird.
 Kennt man den Radius des zu positionierenden Kreises, so ist die Position des Mittelpunktes eindeutig.
-Intuitiv schiebt man den Mittelpunkt des Kreises entlang der Winkelhalbierenden so nah an die Ecke des des Polygons,
+Bildhaft schiebt man den Mittelpunkt des Kreises entlang der Winkelhalbierenden so nah an die Ecke des des Polygons,
 dass der Kreis die beiden anliegenden Seiten der Ecke berührt.
 
-\citet{Taba2013} merken dazu an,
-% TODO: Anmerkungen zum MCP: kleinerer Kreis wählen, preconditions
+Die Untersuchung dieses Prozesses lieferte das Ergebnis,
+dass der Money-Coutts-Prozess 6-periodisch ist,
+also der siebte gezeichnete Kreis mit dem initial gezeichneten übereinstimmt.
+Ein Beweis wird \Cref{six-circle-theorem} geführt.
 
-In dieser Arbeit werden folgende Konventionen zur Notation verwendet,:
-Im gegebenen Polygon $P$ mit Ecken $A_1$ bis $A_n$ sind sei $a_i$ die Länge der Seite zwischen den Ecken $A_i$ und $A_{i+1}$.
+\citet{Taba2013} merken dazu an,
+dass das von \citet{EMT1974} definierte Vorgehen weiter spezifiziert werden sollte.
+So kann es passieren, dass große Kreise nicht die beide Seiten berühren,
+sondern nur die Verlängerungen dieser.
+Im Prozess gibt es Wahlmöglichkeiten.
+Der neue Kreis kann aus Sicht der Ecke vor oder hinter seinen Vorgänger gezeichnet werden.
+% TODO: Anmerkungen zum MCP: Wahl hier schon betrachten?
+
+Die vorliegende Arbeit betrachtet die Erweiterung des Money-Coutts-Prozesses auf Polygone.
+Es werden folgende Konventionen zur Notation verwendet:
+Im gegebenen Polygon $P$ mit Ecken $A_1$ bis $A_n$ sei $a_i$ die Länge der Seite zwischen den Ecken $A_i$ und $A_{i+1}$.
 Die Größe des Winkels in der Ecke bei $A_i$ beträgt $2\alpha_i$.
-Das Winkelmaß $\alpha_i$ ist also gerade die Hälfte des Winkels bei $A_i$.
+Das Winkelmaß $\alpha_i$ ist also gerade die Hälfte des Innenwinkels bei $A_i$.
 
 \begin{figure}[htbp]
     \include{figures/conventions.tex}
